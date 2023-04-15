@@ -1,0 +1,21 @@
+name: cloudsql-proxy-pal
+version: "1.0.1"
+summary: CLI tool to connect CloudSQL instances using google cloud_sql_proxy
+description: |
+  An interactive prompt to connect CloudSQL instances using google cloud_sql_proxy
+
+confinement: classic
+base: core18
+
+parts:
+  cloudsql-proxy-pal:
+    plugin: go
+    go-importpath: github.com/arnoldj-devops/cloudsql-proxy-pal
+    source: https://github.com/arnoldj-devops/cloudsql-proxy-pal
+    source-type: git
+    build-packages:
+      - gcc
+
+apps:
+  cloudsql-proxy-pal:
+    command: bin/cloudsql-proxy-pal

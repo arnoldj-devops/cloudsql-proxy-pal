@@ -1,0 +1,35 @@
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -X arnoldj-devops/cloudsql-proxy-pal/cmd.version={{.Env.VERSION}}
+    goos:
+      - linux
+      - darwin
+archives:
+  - replacements:
+      darwin: Darwin
+      linux: Linux
+      amd64: x86_64
+checksum:
+  name_template: "checksums.txt"
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+brews:
+  - name: cloudsql-proxy-pal
+    homepage: https://github.com/arnoldj-devops/homebrew-tools
+    tap:
+      owner: arnoldj-devops
+      name: homebrew-tools
+    ## TODO: fix the script to run on macOS
+    # post_install: |
+    #   system "curl -s https://raw.githubusercontent.com/arnoldj-devops/cloudsql-proxy-pal/master/scripts/install_prerequisites.sh | bash"
