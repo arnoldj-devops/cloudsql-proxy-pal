@@ -1,5 +1,4 @@
-## License
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/arnoldj-devops/cloudsql-proxy-pal/blob/master/LICENSEs)
+[![License](https://img.shields.io/packagist/l/phplicengine/bitly)](https://packagist.org/packages/phplicengine/bitly)
 
 # Install cloudsql-proxy-pal
 
