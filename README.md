@@ -1,3 +1,6 @@
+## License
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/arnoldj-devops/cloudsql-proxy-pal/blob/master/LICENSEs)
+
 # Install cloudsql-proxy-pal
 
 ## MacOS
