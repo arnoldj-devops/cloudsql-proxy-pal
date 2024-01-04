@@ -1,4 +1,6 @@
-[![License](https://img.shields.io/packagist/l/phplicengine/bitly)](https://packagist.org/packages/phplicengine/bitly)
+[![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](https://go.dev/)
+[![Latest release](https://badgen.net/github/release/arnoldj-devops/cloudsql-proxy-pal)](https://github.com/arnoldj-devops/cloudsql-proxy-pal/releases)
+[![GitHub license](https://img.shields.io/github/license/arnoldj-devops/cloudsql-proxy-pal.svg)](https://github.com/arnoldj-devops/cloudsql-proxy-pal/blob/master/LICENSE)
 
 # Install cloudsql-proxy-pal
 
