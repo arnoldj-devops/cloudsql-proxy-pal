@@ -27,6 +27,13 @@ func getPort() string {
 	prompt := promptui.Select{
 		Label: "Select Instance to disconnect",
 		Items: str,
+		Size:      10,
+		Templates: &promptui.SelectTemplates{Label: "{{ . }}"},
+		Searcher: func(input string, index int) bool {
+			item := strings.ToLower(str[index])
+			input = strings.ToLower(input)
+			return strings.Contains(item, input)
+		},
 	}
 
 	_, result, err := prompt.Run()

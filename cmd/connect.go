@@ -41,9 +41,15 @@ func getProject() string {
 	}
 
 	prompt := promptui.Select{
-		Label: "Select GCP Project",
-		Items: proj_id,
-		Size:  10,
+		Label:     "Select GCP Project",
+		Items:     proj_id,
+		Size:      10,
+		Templates: &promptui.SelectTemplates{Label: "{{ . }}"},
+		Searcher: func(input string, index int) bool {
+			item := strings.ToLower(proj_id[index])
+			input = strings.ToLower(input)
+			return strings.Contains(item, input)
+		},
 	}
 
 	_, result, err := prompt.Run()
@@ -94,7 +100,13 @@ func getInstance() string {
 	prompt := promptui.Select{
 		Label: "Select instance to connect",
 		Items: instancelist,
-		Size:  10,
+		Size:      10,
+		Templates: &promptui.SelectTemplates{Label: "{{ . }}"},
+		Searcher: func(input string, index int) bool {
+			item := strings.ToLower(instancelist[index])
+			input = strings.ToLower(input)
+			return strings.Contains(item, input)
+		},
 	}
 
 	_, result, err := prompt.Run()
